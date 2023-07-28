@@ -42,7 +42,7 @@ if __name__ == '__main__':
     model = nn.DataParallel(model).cuda()
 
     train_dset = VQAFeatureDataset('train', dictionary, opt.dataroot, opt.img_root, ratio=opt.ratio, adaptive=False)  # load labeld data
-    eval_dset = VQAFeatureDataset('test', dictionary, opt.dataroot, opt.img_root,ratio=1.0, adaptive=False)
+    eval_dset = VQAFeatureDataset('test', dictionary, opt.dataroot, opt.img_root,ratio=opt.ratio, adaptive=False)
 
     train_loader = DataLoader(train_dset, opt.batch_size, shuffle=True, num_workers=4, collate_fn=utils.trim_collate)
     opt.use_all = 1
