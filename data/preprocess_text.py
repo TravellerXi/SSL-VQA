@@ -285,6 +285,7 @@ if __name__ == '__main__':
     occurence = filter_answers(answers, 9)
 
     cache_path = args.dataroot + 'cache/train_test_ans2label.pkl'
+    target_root = args.dataroot +'cache'
     if os.path.isfile(cache_path):
         print('found %s' % cache_path)
         ans2label = cPickle.load(open(cache_path, 'rb'))
