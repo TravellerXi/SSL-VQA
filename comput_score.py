@@ -17,7 +17,7 @@ if __name__ == '__main__':
 
 	args = parse_args()
 
-	anno_path = osp.join(args.dataroot, '%s_target_count.pth'%(args.name))
+	anno_path = osp.join(args.dataroot, 'cache','%s_target_count.pth'%(args.name))
 	annotations = torch.load(anno_path)
 
 	annotations = sorted(annotations, key=lambda x: x['question_id'])
